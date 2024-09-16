@@ -1,0 +1,15 @@
+# create a builder image
+FROM node:lts-slim as builder
+# automatically creates the dir and sets it as the current working dir
+WORKDIR /usr/src/app
+# install vite globally
+RUN npm install -g vite
+COPY package*.json /usr/src/app
+# install all deps
+RUN npm install
+
+# Bundle app source
+COPY . .
+
+# run the app
+CMD ["npm", "run", "dev"]
