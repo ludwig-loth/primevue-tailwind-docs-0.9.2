@@ -2,6 +2,8 @@ services:
   client:
     container_name: primevue-tailwind-docs
     restart: unless-stopped
+    build:
+      context: ./
     ports:
       - "33331:3000"
     entrypoint: sh -c "npm install --include=dev && npm run dev"
