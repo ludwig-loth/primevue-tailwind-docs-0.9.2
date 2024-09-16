@@ -3,7 +3,8 @@ services:
     container_name: primevue-tailwind-docs
     restart: unless-stopped
     build:
-      context: ./
+      context: .
+      dockerfile: DOCKERFILE
     ports:
       - "33331:3000"
     entrypoint: sh -c "npm install --include=dev && npm run dev"
