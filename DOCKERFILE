@@ -1,5 +1,5 @@
 # create a builder image
-FROM node:lts-slim as builder
+FROM node:18.20.4-alpine as builder
 # automatically creates the dir and sets it as the current working dir
 WORKDIR /usr/src/app
 # install vite globally
